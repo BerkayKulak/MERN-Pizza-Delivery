@@ -11,7 +11,7 @@ function Pizza({ pizza }) {
 
   return (
     <div
-      style={{ margin: "70px" }}
+
       className="shadow-lg p-3 mb-5 bg-white rounded"
     >
       <div onClick={handleShow}>
