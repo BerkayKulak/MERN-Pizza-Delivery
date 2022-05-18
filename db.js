@@ -1,22 +1,18 @@
 const mongoose = require("mongoose");
 
-function connectDB() {
-  mongoose.connect(
-    "mongodb+srv://kulakberkay15:qXJYYPx1nPXn9rIk@cluster0.aa7xz.mongodb.net/pizzadelivery?retryWrites=true&w=majority",
-    { useUnifiedTopology: true, useNewUrlParser: true }
-  );
+var mongoURL =
+  "mongodb+srv://kulakberkay15:qXJYYPx1nPXn9rIk@cluster0.aa7xz.mongodb.net/pizzadelivery?retryWrites=true&w=majority";
 
-  const connection = mongoose.connection;
+mongoose.connect(mongoURL, { useUnifiedTopology: true, useNewUrlParser: true });
 
-  connection.on("connected", () => {
-    console.log("Mongo DB connection successfull");
-  });
+var db = mongoose.connection;
 
-  connection.on("error", () => {
-    console.log("Mongo DB connection error");
-  });
-}
+db.on("connected", () => {
+  console.log("Mongo DB Connection Successfull");
+});
 
-connectDB();
+db.on("error", () => {
+  console.log(`Mongo DB Connection failed`);
+});
 
 module.exports = mongoose;
