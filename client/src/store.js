@@ -5,7 +5,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import getAllPizzasReducer from "./reducers/pizzaReducers";
 
 const finalReducer = combineReducers({
-  getAllPizzasReducer,
+  getAllPizzasReducer: getAllPizzasReducer,
 });
 
 const initialState = {};
