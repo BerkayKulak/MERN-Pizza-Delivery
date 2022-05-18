@@ -6,12 +6,11 @@ const db = require("./db.js");
 const cors = require("cors");
 
 app.use(cors());
-
 app.use(express.json());
 
 const pizzasRoute = require("./routes/pizzasRoute");
 
-app.use("/api/pizzas/", pizzasRoute);
+app.use("/api/pizzas", pizzasRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

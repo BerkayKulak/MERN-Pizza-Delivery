@@ -1,14 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPizzas } from "../actions/pizzaActions";
 import Pizza from "../components/Pizza";
 
-function HomeScreen() {
+export default function Homescreen() {
   const dispatch = useDispatch();
 
   const pizzasstate = useSelector((state) => state.getAllPizzasReducer);
 
   const { pizzas, error, loading } = pizzasstate;
+
+  console.log(pizzasstate);
 
   useEffect(() => {
     dispatch(getAllPizzas());
@@ -16,15 +18,15 @@ function HomeScreen() {
 
   return (
     <div>
-      <div className="row justify-content-center">
+      <div className="row">
         {loading ? (
-          <h1>Loading...</h1>
+          <h1>Loading</h1>
         ) : error ? (
           <h1>Something Went Wrong</h1>
         ) : (
           pizzas.map((pizza) => {
             return (
-              <div className="col-md-3 m-3" key={pizza._id}>
+              <div className="col-md-4" key={pizza._id}>
                 <div>
                   <Pizza pizza={pizza} />
                 </div>
@@ -36,5 +38,3 @@ function HomeScreen() {
     </div>
   );
 }
-
-export default HomeScreen;

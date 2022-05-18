@@ -5,6 +5,7 @@ export const getAllPizzasReducer = (state = { pizzas: [] }, action) => {
         loading: true,
         ...state,
       };
+
     case "GET_PIZZAS_SUCCESS":
       return {
         loading: false,
