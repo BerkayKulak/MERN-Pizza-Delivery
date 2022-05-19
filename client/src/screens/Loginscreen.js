@@ -7,6 +7,12 @@ function Loginscreen() {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (localStorage.getItem("currentUser")) {
+      window.location.href = "/";
+    }
+  }, []);
+
   function login() {
     const user = { email, password };
     dispatch(loginUser(user));
