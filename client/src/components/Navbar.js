@@ -1,5 +1,8 @@
 import React from "react";
 import {useSelector, useDispatch} from 'react-redux'
+import { addToCart } from "../actions/cartActions";
+
+
 
 function Navbar() {
   const cartstate = useSelector(state => state.cartReducer)
