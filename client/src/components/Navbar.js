@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../actions/cartActions";
+import { logoutUser } from "../actions/userActions";
 
 function Navbar() {
   const cartstate = useSelector((state) => state.cartReducer);
   const userstate = useSelector((state) => state.loginUserReducer);
   const { currentUser } = userstate;
-
+  const dispatch = useDispatch();
   return (
     <div>
       <nav className="navbar navbar-expand-lg shadow-lg p-3 mb-5 bg-white rounded">
@@ -46,8 +47,14 @@ function Navbar() {
                   <a className="dropdown-item" href="/orders">
                     Orders
                   </a>
-                  <a className="dropdown-item" href="/orders">
-                    Logout
+                  <a
+                    className="dropdown-item"
+                    href="#"
+                    onClick={() => {
+                      dispatch(logoutUser());
+                    }}
+                  >
+                    <li>Logout</li>
                   </a>
                 </div>
               </div>
