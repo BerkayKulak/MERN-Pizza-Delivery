@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPizzas } from "../actions/pizzaActions";
 import Error from "../components/Error";
+import Filter from "../components/Filter";
 import Loading from "../components/Loading";
 import Pizza from "../components/Pizza";
 
@@ -20,7 +21,8 @@ export default function Homescreen() {
 
   return (
     <div>
-      <div className="row">
+      <div className="row justify-content-center">
+        <Filter/>
         {loading ? (
           <Loading />
         ) : error ? (
