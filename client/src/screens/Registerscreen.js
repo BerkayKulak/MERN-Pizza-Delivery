@@ -26,60 +26,58 @@ function Registerscreen() {
 
   return (
     <div>
-      <h1>
-        <div className="row justify-content-center mt-5">
-          <div className="col-md-5 mt-5 text-left">
-            <h2 className="text-center mt-2" style={{ fontSize: "35px" }}>
+      <div className="row justify-content-center mt-5">
+        <div className="col-md-5 mt-5 text-left">
+          <h2 className="text-center mt-2" style={{ fontSize: "35px" }}>
+            Register
+          </h2>
+          <div>
+            <input
+              required
+              type="text"
+              placeholder="name"
+              className="form-control"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
+            <input
+              required
+              type="email"
+              placeholder="email"
+              className="form-control"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+            <input
+              required
+              type="password"
+              placeholder="password"
+              className="form-control"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+            <input
+              required
+              type="password"
+              placeholder="confirm password"
+              className="form-control"
+              value={cpassword}
+              onChange={(e) => {
+                setcpassword(e.target.value);
+              }}
+            />
+            <button onClick={register} className="btn mt-3">
               Register
-            </h2>
-            <div>
-              <input
-                required
-                type="text"
-                placeholder="name"
-                className="form-control"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-              />
-              <input
-                required
-                type="email"
-                placeholder="email"
-                className="form-control"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-              <input
-                required
-                type="password"
-                placeholder="password"
-                className="form-control"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              />
-              <input
-                required
-                type="password"
-                placeholder="confirm password"
-                className="form-control"
-                value={cpassword}
-                onChange={(e) => {
-                  setcpassword(e.target.value);
-                }}
-              />
-              <button onClick={register} className="btn mt-3">
-                Register
-              </button>
-            </div>
+            </button>
           </div>
         </div>
-      </h1>
+      </div>
     </div>
   );
 }
